@@ -1,0 +1,64 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Main *-- User
+Main : + static void main()
+
+User *-- Account
+User : - String name
+
+
+User : + getName()
+
+
+
+Account : - String userName
+Account : - String password
+Account : - Scanner getUserInput
+
+Account : + getName()
+Account : + setName()
+Account : + getPassword()
+Account : + setPassword()
+Account : + String getUserInput()
+Account : + Account(String userName, String password)
+
+
+Account *-- MainMenu
+MainMenu : + displayOptions()
+
+MainMenu *-- Rating
+MainMenu *-- Media
+
+
+Interface Media
+Media : + getName()
+Media : + getYearOfRelease()
+Media : + getGenre()
+Media : + getTypeOfMedia()
+
+Media <|--  Movie
+Movie : - String name
+Movie : - int yearOfRelease
+Movie : - String genre
+Movie : - String typeOfMedia
+
+Movie : + getName()
+Movie : + getYearOfRelease()
+Movie : + getGenre()
+Movie : + getTypeOfMedia()
+
+
+Media <|-- Series
+Series : - String name
+Series : - int yearOfRelease
+Series : - String genre
+Series : - String typeOfMedia
+
+Series : + String name()
+Series : + int yearOfRelease()
+Series : + String genre()
+Series : + String typeOfMedia()
+
+
+@enduml
