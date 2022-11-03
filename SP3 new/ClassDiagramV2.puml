@@ -15,7 +15,10 @@ User : + getNameOfUser()
 User : + getAgeOfUser()
 
 
+FileIO *-- Account
 
+Class FileIO
+FileIO : + Arraylist<String>
 
 
 Account : - String userName
@@ -47,10 +50,6 @@ MainMenu : + watchedMovies()
 
 MainMenu *-- Media
 
-
-Enum listOfMedia
-listOfMedia : 100BestMovies.txt
-listOfMedia : 100BestSeries.txt
 
 
 Media *-- Amedia
