@@ -78,7 +78,7 @@ Movie : + getName()
 Movie : + getYearOfRelease()
 Movie : + getGenre()
 Movie : + getTypeOfMedia()
-Movie : + addMovieToMediaList()
+
 
 
 Amedia <|-- Series
@@ -88,6 +88,7 @@ Series : - String genre
 Series : - String typeOfMedia
 Series : - int Season
 Series : - int episode
+Series : - Arraylist <listOfMedia> mediaList
 
 
 Series : Series(String name, int yearOfRelease, String genre, int season, int episode, String typeOfMedia)
