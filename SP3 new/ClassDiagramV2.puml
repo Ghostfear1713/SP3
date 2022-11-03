@@ -10,9 +10,10 @@ User : - int ageOfUser
 
 
 
+
 User : + getNameOfUser()
 User : + getAgeOfUser()
-User : + Scanner getUserInput(System.in)
+
 
 
 
@@ -20,20 +21,26 @@ User : + Scanner getUserInput(System.in)
 Account : - String userName
 Account : - String password
 Account : - Arraylist <User> users
+Account : - watchedMovies
+
 
 
 Account : + Account(String userName, String password)
+Account : + Scanner getUserInput(System.in)
 Account : + getUserName()
-Account : + setUserName()
 Account : + getPassword()
 Account : + setPassword()
 Account : + addUsers()
+Account : + getSavedMovies()
+Account : + getWatchedMovies()
 
 
 
 
 Account *-- MainMenu
 MainMenu : + displayOptions()
+MainMenu : + savedMovies()
+MainMenu : + watchedMovies()
 
 
 
