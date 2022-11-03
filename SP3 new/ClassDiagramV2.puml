@@ -7,12 +7,11 @@ Main : + static void main()
 User *-- Account
 User : - String nameOfUser
 User : - int ageOfUser
-User : - favoriteGenres
+
 
 
 User : + getNameOfUser()
 User : + getAgeOfUser()
-User : + getFavoriteGenres()
 User : + Scanner getUserInput(System.in)
 
 
@@ -24,13 +23,12 @@ Account : - Arraylist <User> users
 
 
 Account : + Account(String userName, String password)
-Account : + Scanner getUserInput(System.in)
-Account : + getName()
-Account : + setName()
+Account : + getUserName()
+Account : + setUserName()
 Account : + getPassword()
 Account : + setPassword()
 Account : + addUsers()
-Account : + addFavorite()
+
 
 
 
@@ -42,6 +40,7 @@ MainMenu : + displayOptions()
 
 MainMenu *-- Media
 
+
 Enum listOfMedia
 listOfMedia : 100BestMovies.txt
 listOfMedia : 100BestSeries.txt
@@ -49,52 +48,44 @@ listOfMedia : 100BestSeries.txt
 
 Media *-- Amedia
 Interface Media
-Media : + getName()
-Media : + getYearOfRelease()
-Media : + getGenre()
+Media : + getNameMedia()
+Media : + getYearOfReleaseMedia()
+Media : + getGenreMedia()
 Media : + getTypeOfMedia()
 
 
 Abstract Amedia
 Amedia : - Arraylist<listOfMedia> mediaList
-Amedia : - int yearOfRelease
-Amedia : - String genre
+Amedia : - int yearOfReleaseMedia
+Amedia : - String genreMedia
 Amedia : - String typeOfMedia
+Amedia : - String nameMedia
 
-Amedia : + getName()
-Amedia : + getYearOfRelease()
-Amedia : + getGenre()
+
+Amedia : + getNameMedia()
+Amedia : + getYearOfReleaseMedia()
+Amedia : + getGenreMedia()
 Amedia : + getTypeOfMedia()
 
 Amedia <|--  Movie
-Movie : - String name
-Movie : - int yearOfRelease
-Movie : - String genre
-Movie : - String typeOfMedia
-Movie : - Arraylist <listOfMedia> mediaList
 
-Movie : Movie( String name, int yearOfRelease, String genre, String typeOfMedia)
-Movie : + getName()
-Movie : + getYearOfRelease()
-Movie : + getGenre()
-Movie : + getTypeOfMedia()
+
+Movie : Movie( String nameOfMedia, int yearOfReleaseMedia, String genreMedia, String typeOfMedia)
+
 
 
 
 Amedia <|-- Series
-Series : - String name
-Series : - int yearOfRelease
-Series : - String genre
-Series : - String typeOfMedia
+
 Series : - int Season
 Series : - int episode
-Series : - Arraylist <listOfMedia> mediaList
 
 
-Series : Series(String name, int yearOfRelease, String genre, int season, int episode, String typeOfMedia)
-Series : + String name()
-Series : + int yearOfRelease()
-Series : + String genre()
-Series : + String typeOfMedia()
+
+Series : Series(String nameMedia, int yearOfReleaseMedia, String genreMedia, int seasonSeries, int episodeSeries, String typeOfMedia)
+
+Series : + getSeasonSeries()
+Series : + getEpisodeSeries()
+
 
 @endum
