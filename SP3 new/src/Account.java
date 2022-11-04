@@ -38,9 +38,8 @@ public class Account extends User{
 
     public Scanner getUserInput = new Scanner(System.in);
 
-    public ArrayList<User> addUsers(User e){
+    public void addUsers(User e){
         users.add(e);
-        return users;
     }
 
 }
