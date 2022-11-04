@@ -2,31 +2,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Account extends User{
-    private String userName;
-    private String password;
+
     private ArrayList<User> users;
 
-
-    public Account(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
+    public Account(int ageOfUser, String userName, String password) {
+        super(ageOfUser, userName, password);
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public ArrayList<User> getUsers() {
         return users;

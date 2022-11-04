@@ -4,21 +4,37 @@ import java.util.Scanner;
 
 public class FileIO {
 
-    public String[] fileReader() {
 
-        String[] data = new String[205];
+    public ArrayList<String> movieList() {
 
-        try {
-            Scanner scan = new Scanner(new File("/Users/turan/Documents/GitHub/SP3/.idea/Data/ListOfMedia.txt"));
-            for (String d : data) {
-                String s = scan.nextLine();
-                System.out.println(s);
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println(e);
-        }
-        return data;
+        File movieFile = new File("/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt");
+        return getStrings(movieFile);
     }
 
+        public ArrayList <String> seriesList(){
 
+            File seriesFile = new File("/Users/turan/Documents/GitHub/SP3/Data/ListOfSeries.txt");
+            return getStrings(seriesFile);
+        }
+
+    private ArrayList<String> getStrings(File seriesFile) {
+        ArrayList<String> seriesData = new ArrayList<>();
+
+        try {
+            Scanner input = new Scanner(seriesFile);
+            input.nextLine();
+
+            while (input.hasNextLine()) {
+                seriesData.add(input.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            seriesData = null;
+        }
+        return  seriesData;
+    }
 }
+
+
+
+
+
