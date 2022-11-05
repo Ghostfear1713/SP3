@@ -1,8 +1,23 @@
-public abstract class Amedia implements Media{
+public  class Amedia implements Media{
     private int yearOfReleaseMedia;
     private String genreMedia;
-    private String typeOfMedia;
+
     private String nameofMedia;
+    private float rating;
+
+
+
+    public Amedia(String nameofMedia,int yearOfReleaseMedia, String genreMedia, float rating) {
+        this.yearOfReleaseMedia = yearOfReleaseMedia;
+        this.genreMedia = genreMedia;
+        this.nameofMedia = nameofMedia;
+        this.rating = rating;
+    }
+
+    @Override
+    public String getNameMedia() {
+        return null;
+    }
 
     @Override
     public int getYearOfReleaseMedia() {
@@ -14,12 +29,8 @@ public abstract class Amedia implements Media{
         return genreMedia;
     }
 
-    @Override
-    public String getTypeOfMedia() {
-        return typeOfMedia;
-    }
+ public float getRating(){
+        return rating;
+ }
 
-    public String getNameofMedia() {
-        return nameofMedia;
-    }
 }

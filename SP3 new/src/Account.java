@@ -6,7 +6,7 @@ public class Account extends User{
 
 
     public Account(int ageOfUser, String userName, String password) {
-        super(ageOfUser, userName, password);
+        super(userName, password);
     }
 
 

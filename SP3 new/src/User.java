@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class User extends Main{
 
-    int ageOfUser;
+
     private String userName;
     private String password;
     private ArrayList<User> users;
 
-    public User(int ageOfUser, String userName, String password) {
-        this.ageOfUser = ageOfUser;
+    public User(String userName, String password) {
+
         this.userName = userName;
         this.password = password;
     }
@@ -40,10 +40,6 @@ public class User extends Main{
     }
 
 
-
-    public int getAgeOfUser() {
-        return ageOfUser;
-    }
 
 
     public boolean login(String username, String password){

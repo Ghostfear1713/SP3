@@ -1,6 +1,7 @@
 public class Movie extends Amedia{
-    @Override
-    public String getNameMedia() {
-        return null;
+
+
+    public Movie(String nameofMedia, int yearOfReleaseMedia, String genreMedia, float rating) {
+        super(nameofMedia, yearOfReleaseMedia, genreMedia, rating);
     }
 }
