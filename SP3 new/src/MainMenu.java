@@ -5,8 +5,12 @@ import java.util.Scanner;
 
 public class MainMenu extends Account {
 
-    public ArrayList<String> movieList;
-    public ArrayList<String> seriesList;
+
+
+    FileIO newMovieList = new FileIO();
+    FileIO newSeriesList = new FileIO();
+
+
 
 
     public MainMenu(int ageOfUser, String userName, String password) {
@@ -62,15 +66,16 @@ public class MainMenu extends Account {
 
                         switch (choice.nextLine()) {
                             case "film":
-                                while (true) {
+                               // while (true) {
 
                                     System.out.println("Hvilken film leder du efter?");
                                     choice.nextLine();
 
-                                    for (String e : movieList) {
+                                    for (String e : newMovieList.movieList()) {
                                         if (e.contains(choice.nextLine())) {
                                             System.out.println(e);
                                         }else System.out.println("Den film findes ikke");
+                                        break;
                                     }
                                 }
                         }
@@ -80,7 +85,7 @@ public class MainMenu extends Account {
             }
         }
     }
-}
+//}
 
 
 
