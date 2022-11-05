@@ -74,7 +74,7 @@ public class MainMenu extends Account {
                                     for (String e : newMovieList.movieList()) {
                                         array.add(e);
                                         if (array.contains(choice.nextLine())) {
-                                            System.out.println(e);
+                                            System.out.println("Din valgte film" + e);
                                             break;
                                         } else System.out.println("Den film findes ikke");
                                         break;
@@ -88,7 +88,7 @@ public class MainMenu extends Account {
 
                                     for (String e : newSeriesList.seriesList()) {
                                         if (e.equals(choice.nextLine())) {
-                                            System.out.println(e);
+                                            System.out.println("Din valgte serie" + e);
                                             break;
                                         } else System.out.println("Den serie findes ikke");
                                         break;
