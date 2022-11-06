@@ -1,13 +1,72 @@
-public  class Amedia implements Media{
-    private int yearOfReleaseMedia;
+public abstract class Amedia implements Media{
+    private String name;
+    private int year;
+    private String genre;
+    private double rating;
+
+    public Amedia(String name, int year, String genre, double rating) {
+        this.name = name;
+        this.year = year;
+        this.genre = genre;
+        this.rating = rating;
+    }
+
+    public Amedia(){
+        name = "";
+        year = 0;
+        genre = "";
+        rating = 0;
+    }
+
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+    @Override
+    public String toString(){
+        return "Name:" + " " + this.name + "| " + "Year:" + this.year + "|" + "Genre:" + " " + this.genre + "|" +  "Rating:" + " " + this.rating;
+    }
+
+
+    /*    private int yearOfReleaseMedia;
     private String genreMedia;
 
     private String nameofMedia;
-    private float rating;
+    private double rating;
 
 
 
-    public Amedia(String nameofMedia,int yearOfReleaseMedia, String genreMedia, float rating) {
+    public Amedia(String nameofMedia,int yearOfReleaseMedia, String genreMedia, double rating) {
         this.yearOfReleaseMedia = yearOfReleaseMedia;
         this.genreMedia = genreMedia;
         this.nameofMedia = nameofMedia;
@@ -16,7 +75,7 @@ public  class Amedia implements Media{
 
     @Override
     public String getNameMedia() {
-        return null;
+        return this.getNameMedia();
     }
 
     @Override
@@ -29,8 +88,8 @@ public  class Amedia implements Media{
         return genreMedia;
     }
 
- public float getRating(){
+ public double getRating(){
         return rating;
- }
+ }*/
 
 }
