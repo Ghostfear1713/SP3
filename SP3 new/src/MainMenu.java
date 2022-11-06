@@ -1,13 +1,16 @@
+/*
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainMenu extends Account {
+    public static void main(String[] args) {
 
+    }
 
-    FileIO newMovieList = new FileIO();
-    FileIO newSeriesList = new FileIO();
+    //FileIO newMovieList = new FileIO();
+    //FileIO newSeriesList = new FileIO();
 
 
     public MainMenu(int ageOfUser, String userName, String password) {
@@ -68,12 +71,10 @@ public class MainMenu extends Account {
 
                                     System.out.println("Hvilken film leder du efter?");
                                     choice.nextLine();
-                                    ArrayList<String> array = new ArrayList<>();
-                                    array = newMovieList.movieList();
 
                                     for (String e : newMovieList.movieList()) {
-                                        array.add(e);
-                                        if (array.contains(choice.nextLine())) {
+
+                                        if (e.contains(choice.nextLine())) {
                                             System.out.println("Din valgte film" + e);
                                             break;
                                         } else System.out.println("Den film findes ikke");
@@ -111,3 +112,4 @@ public class MainMenu extends Account {
 
 
 
+*/
