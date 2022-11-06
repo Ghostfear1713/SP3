@@ -1,12 +1,65 @@
 import java.io.*;
+import java.nio.Buffer;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class FileIO {
 
 
+public List<Movie> getMoviesFromFile(BufferedReader reader) throws IOException{
 
-    public ArrayList<String> movieList() {
+ List<Movie> movies = new ArrayList<>();
+
+ String line;
+ while((line = reader.readLine()) != null){
+     String[] movieDetails = line.trim().split(";");
+     Movie movie = new Movie();
+     for(int i = 0; i<movieDetails.length; i++){
+
+         setMovieName(movieDetails,movie,i);
+         setMovieYear(movieDetails,movie,i);
+         setMovieGenre(movieDetails,movie,i);
+         setMovieRating(movieDetails,movie,i);
+
+     }
+
+     movies.add(movie);
+ }
+return movies;
+}
+
+
+private void setMovieName(String[] movieDetails, Movie movie, int i) {
+    if(i<movieDetails.length & i== 0) {
+    movie.setName(String.valueOf(movieDetails[i]));
+    }
+}
+private void setMovieYear(String[] movieDetails, Movie movie, int i) {
+    if(i<movieDetails.length && i== 1) {
+        movie.setYear(Integer.parseInt(String.valueOf(movieDetails[1])));
+        }
+    }
+    private void setMovieGenre(String[] movieDetails, Movie movie, int i) {
+        if(i<movieDetails.length & i== 2) {
+            movie.setGenre(String.valueOf(movieDetails[2]));
+        }
+    }
+    private void setMovieRating(String[] movieDetails, Movie movie, int i) {
+        if(i<movieDetails.length && i== 3) {
+            movie.setRating(Double.parseDouble(String.valueOf(movieDetails[3])));
+        }
+    }
+}
+
+
+
+
+
+
+
+
+   /* public ArrayList<String> movieList() {
 
         File movieFile = new File("/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt");
         return getStrings(movieFile);
@@ -19,7 +72,7 @@ public class FileIO {
             return getStrings(seriesFile);
         }
 
-    private ArrayList<String> getStrings(File mediaFile) {
+    public ArrayList<String> getStrings(File mediaFile) {
         ArrayList<String> mediaData = new ArrayList<>();
 
         try {
@@ -29,6 +82,7 @@ public class FileIO {
             while (input.hasNextLine()) {
                 mediaData.add(input.nextLine() + "\n");
             }
+            input.close();
         } catch (FileNotFoundException e) {
             mediaData = null;
         }
@@ -36,7 +90,7 @@ public class FileIO {
     }
 
 
-    }
+    }*/
 
 
 
