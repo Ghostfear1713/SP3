@@ -10,11 +10,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         String fileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt";
+        String seriesFileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfSeries.txt";
 
         // Få nyt fil på bufferedReader så den også kan læse serieliste
 
 
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        BufferedReader readSeries = new BufferedReader(new FileReader(seriesFileName));
         FileIO fio = new FileIO();
 
 
@@ -29,7 +31,7 @@ public class Main {
             Scanner choice = new Scanner(System.in);
 
             List<Movie> movies = fio.getMoviesFromFile(reader);
-            List<Series> serie = fio.getSeriesFromFile(reader);
+            List<Series> serie = fio.getSeriesFromFile(readSeries);
 
 
 
@@ -57,10 +59,10 @@ public class Main {
                     switch (choice.nextLine()) {
                         case "film":
                             System.out.println("Hvilken film leder du efter?");
-                            String search = choice.nextLine();
+                            String movieSearch = choice.nextLine();
 
                             for (Movie m : movies) {
-                                if (m.getName().toLowerCase().contains(search.toLowerCase())) {
+                                if (m.getName().toLowerCase().contains(movieSearch.toLowerCase())) {
                                     System.out.println(m.toString());
                                 }
 
@@ -70,10 +72,10 @@ public class Main {
 
                         case "serie":
                             System.out.println("Hvilken serie leder du efter");
-                            String seriesChoice = choice.nextLine();
+                            String seriesSearch = choice.nextLine();
 
                             for(Series s : serie){
-                                if(s.getName().toLowerCase().contains(seriesChoice.toLowerCase())){
+                                if(s.getName().toLowerCase().contains(seriesSearch.toLowerCase())){
                                     System.out.println(s.toString());
                                 }
                             }

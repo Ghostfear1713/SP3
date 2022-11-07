@@ -27,5 +27,10 @@ String episode;
     public void setEpisode(String episode) {
         this.episode = episode;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Season" + " " + this.season + "|" + "Episodes" + " " + this.episode + "|";
+    }
 }
 

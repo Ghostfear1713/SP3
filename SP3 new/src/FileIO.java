@@ -60,12 +60,12 @@ private void setMovieYear(String[] movieDetails, Movie movie, int i) {
 
 
 
-    public List<Series> getSeriesFromFile(BufferedReader reader) throws IOException{
+    public List<Series> getSeriesFromFile(BufferedReader seriesReader) throws IOException{
 
         List<Series> series = new ArrayList<Series>();
 
         String line;
-        while((line = reader.readLine()) != null){
+        while((line = seriesReader.readLine()) != null){
             String[] seriesDetails = line.trim().split(";");
             Series serie = new Series();
             for(int i = 0; i<seriesDetails.length; i++){
@@ -75,6 +75,8 @@ private void setMovieYear(String[] movieDetails, Movie movie, int i) {
                 setSeriesYear(seriesDetails, serie, i);
                 setSeriesGenre(seriesDetails, serie, i);
                 setSeriesRating(seriesDetails, serie, i);
+                setSeriesSeason(seriesDetails, serie, i);
+                setSeriesEpisode(seriesDetails, serie, i);
 
             }
 
