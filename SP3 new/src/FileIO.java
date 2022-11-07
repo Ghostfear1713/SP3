@@ -22,6 +22,7 @@ public List<Movie> getMoviesFromFile(BufferedReader reader) throws IOException{
          setMovieGenre(movieDetails,movie,i);
          setMovieRating(movieDetails,movie,i);
 
+
      }
 
      movies.add(movie);
@@ -50,6 +51,76 @@ private void setMovieYear(String[] movieDetails, Movie movie, int i) {
             movie.setRating(Double.parseDouble(String.valueOf(movieDetails[3])));
         }
     }
+
+
+
+
+
+
+
+
+
+    public List<Series> getSeriesFromFile(BufferedReader reader) throws IOException{
+
+        List<Series> series = new ArrayList<Series>();
+
+        String line;
+        while((line = reader.readLine()) != null){
+            String[] seriesDetails = line.trim().split(";");
+            Series serie = new Series();
+            for(int i = 0; i<seriesDetails.length; i++){
+
+
+                setSeriesName(seriesDetails, serie, i);
+                setSeriesYear(seriesDetails, serie, i);
+                setSeriesGenre(seriesDetails, serie, i);
+                setSeriesRating(seriesDetails, serie, i);
+
+            }
+
+            series.add(serie);
+        }
+        return series;
+    }
+
+
+    private void setSeriesName(String[] seriesDetails, Series serie, int i) {
+        if(i<seriesDetails.length & i== 0) {
+            serie.setName(String.valueOf(seriesDetails[i]));
+        }
+    }
+    private void setSeriesYear(String[] seriesDetails, Series serie, int i) {
+        if(i<seriesDetails.length && i== 1) {
+            serie.setYear(Integer.parseInt(String.valueOf(seriesDetails[1])));
+        }
+    }
+    private void setSeriesGenre(String[] seriesDetails, Series serie, int i) {
+        if(i<seriesDetails.length & i== 2) {
+            serie.setGenre(String.valueOf(seriesDetails[2]));
+        }
+    }
+    private void setSeriesRating(String[] seriesDetails, Series serie, int i) {
+        if(i<seriesDetails.length && i== 3) {
+            serie.setRating(Double.parseDouble(String.valueOf(seriesDetails[3])));
+        }
+        }
+
+    private void setSeriesSeason(String[] seriesDetails, Series serie, int i){
+    if(i<seriesDetails.length && i == 4){
+        serie.setSeason(String.valueOf(seriesDetails[4]));
+    }
+    }
+
+    private void setSeriesEpisode(String[] seriesDetails, Series serie, int i){
+    if(i<seriesDetails.length && i == 5){
+        serie.setEpisode(String.valueOf(seriesDetails[5]));
+    }
+    }
+
+
+
+
+
 }
 
 
@@ -58,39 +129,6 @@ private void setMovieYear(String[] movieDetails, Movie movie, int i) {
 
 
 
-
-   /* public ArrayList<String> movieList() {
-
-        File movieFile = new File("/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt");
-        return getStrings(movieFile);
-
-    }
-
-        public ArrayList <String> seriesList(){
-
-            File seriesFile = new File("/Users/turan/Documents/GitHub/SP3/Data/ListOfSeries.txt");
-            return getStrings(seriesFile);
-        }
-
-    public ArrayList<String> getStrings(File mediaFile) {
-        ArrayList<String> mediaData = new ArrayList<>();
-
-        try {
-            Scanner input = new Scanner(mediaFile);
-            input.nextLine();
-
-            while (input.hasNextLine()) {
-                mediaData.add(input.nextLine() + "\n");
-            }
-            input.close();
-        } catch (FileNotFoundException e) {
-            mediaData = null;
-        }
-        return  mediaData;
-    }
-
-
-    }*/
 
 
 

@@ -58,38 +58,6 @@ public abstract class Amedia implements Media{
     }
 
 
-    /*    private int yearOfReleaseMedia;
-    private String genreMedia;
 
-    private String nameofMedia;
-    private double rating;
-
-
-
-    public Amedia(String nameofMedia,int yearOfReleaseMedia, String genreMedia, double rating) {
-        this.yearOfReleaseMedia = yearOfReleaseMedia;
-        this.genreMedia = genreMedia;
-        this.nameofMedia = nameofMedia;
-        this.rating = rating;
-    }
-
-    @Override
-    public String getNameMedia() {
-        return this.getNameMedia();
-    }
-
-    @Override
-    public int getYearOfReleaseMedia() {
-        return yearOfReleaseMedia;
-    }
-
-    @Override
-    public String getGenreMedia() {
-        return genreMedia;
-    }
-
- public double getRating(){
-        return rating;
- }*/
 
 }
