@@ -66,7 +66,9 @@ private void setMovieYear(String[] movieDetails, Movie movie, int i) {
 
         String line;
         while((line = seriesReader.readLine()) != null){
+            line.replace("-","");
             String[] seriesDetails = line.trim().split(";");
+
             Series serie = new Series();
             for(int i = 0; i<seriesDetails.length; i++){
 

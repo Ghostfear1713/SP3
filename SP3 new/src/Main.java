@@ -12,26 +12,20 @@ public class Main {
         String fileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt";
         String seriesFileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfSeries.txt";
 
-        // Få nyt fil på bufferedReader så den også kan læse serieliste
-
 
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
-        BufferedReader readSeries = new BufferedReader(new FileReader(seriesFileName));
+       // BufferedReader readSeries = new BufferedReader(new FileReader(seriesFileName));
         FileIO fio = new FileIO();
+        List<Movie> movies = fio.getMoviesFromFile(reader);
 
 
-        boolean stopProgram = false;
-
-        User user = new User("Turan", "Password");
-
-
-        while (!stopProgram) {
-            System.out.println("Velkommen" + " " + user.getUserName());
+        while (true) {
+            //System.out.println("Velkommen" + " " + user.getUserName());
             System.out.println("Hvad kunne du tænke dig?\n 1. Se en liste over alle film.\n 2. Se en liste over alle serier.\n 3. Se gemte film og serier.\n 4.Søg");
             Scanner choice = new Scanner(System.in);
 
-            List<Movie> movies = fio.getMoviesFromFile(reader);
-            List<Series> serie = fio.getSeriesFromFile(readSeries);
+
+            //List<Series> serie = fio.getSeriesFromFile(readSeries);
 
 
 
@@ -48,10 +42,10 @@ public class Main {
 
                 case "2":
 
-                    for(Series s : serie){
+                /*    for(Series s : serie){
                         System.out.println(s.toString());
                     }
-                    break;
+                    break;*/
 
                 case "4":
                     System.out.println("søger du efter film, eller serie?");
@@ -61,16 +55,23 @@ public class Main {
                             System.out.println("Hvilken film leder du efter?");
                             String movieSearch = choice.nextLine();
 
+                            boolean found = false;
+
                             for (Movie m : movies) {
                                 if (m.getName().toLowerCase().contains(movieSearch.toLowerCase())) {
                                     System.out.println(m.toString());
+                                    found = true;
                                 }
 
                             }
-                            System.out.println("Denne film findes ikke i vores bibliotek");
-                            break;
+                            if(!found){
+                                    System.out.println("Denne film findes ikke i vores bibliotek");
 
-                        case "serie":
+                            }
+                    }
+                    break;
+
+                      /*  case "serie":
                             System.out.println("Hvilken serie leder du efter");
                             String seriesSearch = choice.nextLine();
 
@@ -78,11 +79,11 @@ public class Main {
                                 if(s.getName().toLowerCase().contains(seriesSearch.toLowerCase())){
                                     System.out.println(s.toString());
                                 }
-                            }
+                            }*/
 
 
 
-                    }
+
 
 
 
