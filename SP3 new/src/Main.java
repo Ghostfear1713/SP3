@@ -9,6 +9,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+
+
+        Account.UserCreation();
+/*
         String fileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt";
         String seriesFileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfSeries.txt";
 
@@ -42,10 +46,12 @@ public class Main {
 
                 case "2":
 
-                /*    for(Series s : serie){
+                */
+/*    for(Series s : serie){
                         System.out.println(s.toString());
                     }
-                    break;*/
+                    break;*//*
+
 
                 case "4":
                     System.out.println("søger du efter film, eller serie?");
@@ -71,7 +77,8 @@ public class Main {
                     }
                     break;
 
-                      /*  case "serie":
+                      */
+/*  case "serie":
                             System.out.println("Hvilken serie leder du efter");
                             String seriesSearch = choice.nextLine();
 
@@ -79,18 +86,20 @@ public class Main {
                                 if(s.getName().toLowerCase().contains(seriesSearch.toLowerCase())){
                                     System.out.println(s.toString());
                                 }
-                            }*/
+                            }*//*
+
+
+
+*/
 
 
 
 
 
 
+         //   }
 
-
-            }
-
-        }
+       // }
     }
 }
 

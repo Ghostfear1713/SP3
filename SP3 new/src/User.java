@@ -1,7 +1,11 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class User extends Main{
+public class User extends Main {
 
     private String nameOfUser;
     private String lastName;
@@ -19,7 +23,7 @@ public class User extends Main{
     }
 
     //Log-in constructor
-    public User(String userName, String password){
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
@@ -44,6 +48,7 @@ public class User extends Main{
     public ArrayList<User> getUsers() {
         return users;
     }
+
     public void setUsers(ArrayList<User> users) {
         this.users = users;
     }
@@ -65,24 +70,57 @@ public class User extends Main{
     }
 
 
+    public static User UserCreation() throws IOException {
+
+        Scanner scan = new Scanner(System.in);
+        ArrayList<User> userList = new ArrayList<>();
+        User user = new User("Turan", "Password");
+        BufferedWriter userWriter = new BufferedWriter(new FileWriter("/Users/turan/Documents/GitHub/SP3/Data/ListOfUsers.txt", true));
 
 
-    public boolean login(String username, String password){
-        for (User u : users){
-            if(u.getUserName() == username && u.getPassword() == password){
-                return true;
-            }
+
+        try {
+
+            System.out.println("Indtast venligst dit ønskede brugernavn");
+
+            String name = scan.nextLine();
+            user.setUserName(name);
+
+
+            System.out.println("Indtast venligst dit ønskede kodeord");
+
+            String password = scan.nextLine();
+            user.setPassword(password);
+
+
+            userList.add(user);
+            System.out.println(userList);
+
+            userWriter.write(user.userName + " " + user.password + "\n");
+
+            userWriter.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
 
         }
-        return false;
+        return user;
     }
 
-  /*  public String saveMovie(){
-        Scanner scanner = new Scanner(System.in){*/
+
+    @Override
+    public String toString() {
+        return "Name" + " " + userName + " " + "Password" + " " + password;
+    }
+}
 
 
 
-        }
+
+
+
+
+
 
 
 
