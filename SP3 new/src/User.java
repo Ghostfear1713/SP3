@@ -1,7 +1,4 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -78,7 +75,6 @@ public class User extends Main {
         BufferedWriter userWriter = new BufferedWriter(new FileWriter("/Users/turan/Documents/GitHub/SP3/Data/ListOfUsers.txt", true));
 
 
-
         try {
 
             System.out.println("Indtast venligst dit ønskede brugernavn");
@@ -105,6 +101,39 @@ public class User extends Main {
 
         }
         return user;
+    }
+
+
+    public static User userlogin(){
+        Scanner scanner = new Scanner(System.in);
+        File file = new File("/Users/turan/Documents/GitHub/SP3/Data/ListOfUsers.txt");
+
+        System.out.println("Brugernavn");
+        String username = scanner.nextLine();
+
+        System.out.println("Kodeord");
+        String password = scanner.nextLine();
+        boolean found = false;
+
+
+        try {
+            Scanner scan = new Scanner(file);
+            int lineNum = 0;
+            while (scan.hasNextLine()) {
+                String line = scan.nextLine();
+                lineNum++;
+                if (line.contains(username) && line.contains(password)) {
+                    System.out.println("Login succesfull");
+                    found = true;
+                } else {
+                    System.out.println("Brugernavn eller kodeord er forkert.");
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("We all going to die!!!");
+        }
+        return null;
     }
 
 

@@ -11,10 +11,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
+User.userlogin();
 
 
-
-        String fileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt";
+       /* String fileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt";
         String seriesFileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfSeries.txt";
 
 
@@ -109,7 +109,7 @@ public class Main {
 
             }
 
-       }
+       }*/
     }
 }
 

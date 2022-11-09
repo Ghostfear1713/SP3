@@ -15,38 +15,4 @@ public class Account extends User {
 
 
 
-/*
-    public static Account UserCreation() {
-
-        Scanner scan = new Scanner(System.in);
-        BufferedWriter userWriter = null;
-        ArrayList<User> userList = new ArrayList<>();
-        File file = new File("/Users/turan/Documents/GitHub/SP3/Data/ListOfUsers.txt");
-        System.out.println("Indtast venligst dit ønskede brugernavn");
-
-
-        try {
-            String password = scan.nextLine();
-            String usrName = scan.nextLine();
-            User user = new User(usrName,password);
-
-            user.setNameOfUser(usrName);
-
-
-            System.out.println("Indtast venligst dit ønskede kodeord");
-            user.setPassword(password);
-            password = scan.nextLine();
-            user.setPassword(password);
-            userList.add(user);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-
-       // }
-return userList;
-    }
-    }
-*/
 
