@@ -1,7 +1,7 @@
 public class Movie extends Amedia{
 
 
-    public Movie(String name, int year, String genre, double rating) {
+    public Movie(String name, String year, String genre, String rating) {
         super(name, year, genre, rating);
     }
 

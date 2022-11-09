@@ -1,36 +1,26 @@
 public class Series extends Amedia{
 
-String season;
-String episode;
-    public Series(String name, int yearOfReleaseMedia, String genreMedia, double rating, String season, String episode) {
+String seasonAndEpisode;
+    public Series(String name, String yearOfReleaseMedia, String genreMedia, String rating, String seasonAndEpisode) {
         super(name, yearOfReleaseMedia, genreMedia, rating);
-        this.season = season;
-        this.episode = episode;
+       this.seasonAndEpisode = seasonAndEpisode;
     }
 
     public Series(){
 
     }
 
-    public String getSeason() {
-        return season;
+    public String getSeasonAndEpisode() {
+        return seasonAndEpisode;
     }
 
-    public void setSeason(String season) {
-        this.season = season;
-    }
-
-    public String getEpisode() {
-        return episode;
-    }
-
-    public void setEpisode(String episode) {
-        this.episode = episode;
+    public void setSeasonAndEpisode(String seasonAndEpisode) {
+        this.seasonAndEpisode = seasonAndEpisode;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Season" + " " + this.season + "|" + "Episodes" + " " + this.episode + "|";
+        return super.toString() + "Season and Episode" + " " + this.seasonAndEpisode ;
     }
 }
 

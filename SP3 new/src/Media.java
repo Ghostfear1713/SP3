@@ -1,8 +1,8 @@
 public interface Media{
     public String getName();
-    public int getYear();
+    public String getYear();
     public String getGenre();
-    public double getRating();
+    public String getRating();
 
 
 

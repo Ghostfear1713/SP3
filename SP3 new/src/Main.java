@@ -11,16 +11,18 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
-        Account.UserCreation();
-/*
+
+
+
         String fileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt";
         String seriesFileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfSeries.txt";
 
 
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
-       // BufferedReader readSeries = new BufferedReader(new FileReader(seriesFileName));
+        BufferedReader readSeries = new BufferedReader(new FileReader(seriesFileName));
         FileIO fio = new FileIO();
         List<Movie> movies = fio.getMoviesFromFile(reader);
+        List<Series> series = fio.getSeriesFromFile(readSeries);
 
 
         while (true) {
@@ -29,7 +31,7 @@ public class Main {
             Scanner choice = new Scanner(System.in);
 
 
-            //List<Series> serie = fio.getSeriesFromFile(readSeries);
+
 
 
 
@@ -46,11 +48,11 @@ public class Main {
 
                 case "2":
 
-                */
-/*    for(Series s : serie){
+
+                for(Series s : series){
                         System.out.println(s.toString());
                     }
-                    break;*//*
+                    break;
 
 
                 case "4":
@@ -72,34 +74,42 @@ public class Main {
                             }
                             if(!found){
                                     System.out.println("Denne film findes ikke i vores bibliotek");
-
+                            break;
                             }
                     }
-                    break;
 
-                      */
-/*  case "serie":
+
+
+                            case "serie":
                             System.out.println("Hvilken serie leder du efter");
                             String seriesSearch = choice.nextLine();
 
-                            for(Series s : serie){
+                            boolean found = false;
+
+                            for(Series s : series){
                                 if(s.getName().toLowerCase().contains(seriesSearch.toLowerCase())){
                                     System.out.println(s.toString());
+                                    found = true;
                                 }
-                            }*//*
+                            }
+                            if(!found){
+                                System.out.println("Denne film findes ikke i vores bibliotek");
+                                break;
+                            }
 
 
 
-*/
 
 
 
 
 
 
-         //   }
 
-       // }
+
+            }
+
+       }
     }
 }
 

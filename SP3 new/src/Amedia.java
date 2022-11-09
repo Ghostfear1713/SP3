@@ -1,10 +1,10 @@
 public abstract class Amedia implements Media{
     private String name;
-    private int year;
+    private String year;
     private String genre;
-    private double rating;
+    private String rating;
 
-    public Amedia(String name, int year, String genre, double rating) {
+    public Amedia(String name, String year, String genre, String rating) {
         this.name = name;
         this.year = year;
         this.genre = genre;
@@ -13,9 +13,9 @@ public abstract class Amedia implements Media{
 
     public Amedia(){
         name = "";
-        year = 0;
+        year = "";
         genre = "";
-        rating = 0;
+        rating = "";
     }
 
 
@@ -28,11 +28,11 @@ public abstract class Amedia implements Media{
         this.name = name;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -45,11 +45,11 @@ public abstract class Amedia implements Media{
     }
 
 
-    public double getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
     @Override
