@@ -104,19 +104,20 @@ public class User extends Main {
     }
 
 
-    public static User userlogin(){
+    public static void userlogin() {
         Scanner scanner = new Scanner(System.in);
-        File file = new File("/Users/turan/Documents/GitHub/SP3/Data/ListOfUsers.txt");
+        File file = new File("Data/ListOfUsers.txt");
 
         System.out.println("Brugernavn");
         String username = scanner.nextLine();
 
         System.out.println("Kodeord");
         String password = scanner.nextLine();
+
         boolean found = false;
 
-
         try {
+
             Scanner scan = new Scanner(file);
             int lineNum = 0;
             while (scan.hasNextLine()) {
@@ -124,16 +125,18 @@ public class User extends Main {
                 lineNum++;
                 if (line.contains(username) && line.contains(password)) {
                     System.out.println("Login succesfull");
-                    found = true;
-                } else {
-                    System.out.println("Brugernavn eller kodeord er forkert.");
+                    break;
+
+                } else if (!scan.hasNextLine()) {
+                    System.out.println(" Brugernavn eller kodeord er forkert");
                 }
+
             }
 
         } catch (FileNotFoundException e) {
             System.out.println("We all going to die!!!");
         }
-        return null;
+
     }
 
 
