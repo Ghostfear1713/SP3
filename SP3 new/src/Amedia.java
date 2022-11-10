@@ -1,4 +1,4 @@
-public abstract class Amedia implements Media{
+public abstract class Amedia implements Media {
     private String name;
     private String year;
     private String genre;
@@ -11,13 +11,12 @@ public abstract class Amedia implements Media{
         this.rating = rating;
     }
 
-    public Amedia(){
+    public Amedia() {
         name = "";
         year = "";
         genre = "";
         rating = "";
     }
-
 
 
     public String getName() {
@@ -52,12 +51,11 @@ public abstract class Amedia implements Media{
     public void setRating(String rating) {
         this.rating = rating;
     }
+
     @Override
-    public String toString(){
-        return "Name:" + " " + this.name + "| " + "Year:" + this.year + "|" + "Genre:" + " " + this.genre + "|" +  "Rating:" + " " + this.rating;
+    public String toString() {
+        return "Name:" + " " + this.name + "| " + "Year:" + this.year + "|" + "Genre:" + " " + this.genre + "|" + "Rating:" + " " + this.rating;
     }
-
-
 
 
 }

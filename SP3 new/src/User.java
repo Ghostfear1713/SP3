@@ -90,7 +90,7 @@ public class User extends Main {
 
 
             userList.add(user);
-            System.out.println(userList);
+            //System.out.println(userList);
 
             userWriter.write(user.userName + " " + user.password + "\n");
 
@@ -115,26 +115,34 @@ public class User extends Main {
         String password = scanner.nextLine();
 
         boolean found = false;
-
+        int maxAttempts = 3;
         try {
 
             Scanner scan = new Scanner(file);
-            int lineNum = 0;
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
-                lineNum++;
                 if (line.contains(username) && line.contains(password)) {
                     System.out.println("Login succesfull");
+                    System.out.println("Velkommen" + " " + username);
+                    Menu.runProgram();
                     break;
 
                 } else if (!scan.hasNextLine()) {
-                    System.out.println(" Brugernavn eller kodeord er forkert");
-                }
+                    //for(int i = 0; i<maxAttempts; i++) {
+                        System.out.println(" Brugernavn eller kodeord er forkert");
+                        //if(i == maxAttempts){
+                      //      System.out.println("Du har prøvet for mange gange. Prøv igen senere");
+                        }
+                    }
 
-            }
+               // }
+
+            //}
 
         } catch (FileNotFoundException e) {
             System.out.println("We all going to die!!!");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }
