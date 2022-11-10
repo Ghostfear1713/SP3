@@ -108,36 +108,44 @@ public class User extends Main {
         Scanner scanner = new Scanner(System.in);
         File file = new File("Data/ListOfUsers.txt");
 
-        System.out.println("Brugernavn");
-        String username = scanner.nextLine();
 
-        System.out.println("Kodeord");
-        String password = scanner.nextLine();
-
-        boolean found = false;
-        int maxAttempts = 3;
         try {
+            boolean found = false;
+            int maxAttempt = 3;
+            int counter = 1;
 
-            Scanner scan = new Scanner(file);
-            while (scan.hasNextLine()) {
-                String line = scan.nextLine();
-                if (line.contains(username) && line.contains(password)) {
-                    System.out.println("Login succesfull");
-                    System.out.println("Velkommen" + " " + username);
-                    Menu.runProgram();
-                    break;
+            while (found == false) {
 
-                } else if (!scan.hasNextLine()) {
-                    //for(int i = 0; i<maxAttempts; i++) {
-                        System.out.println(" Brugernavn eller kodeord er forkert");
-                        //if(i == maxAttempts){
-                      //      System.out.println("Du har prøvet for mange gange. Prøv igen senere");
+                System.out.println("Brugernavn");
+                String username = scanner.nextLine();
+
+                System.out.println("Kodeord");
+                String password = scanner.nextLine();
+
+                Scanner scan = new Scanner(file);
+
+                while (scan.hasNextLine()) {
+                    String line = scan.nextLine();
+
+                    if (line.contains(username) && line.contains(password)) {
+
+                        System.out.println("Login succesfull");
+                        System.out.println("Velkommen" + " " + username);
+                        found = true;
+                        Menu.runProgram();
+                        break;
+                    } else if (!scan.hasNextLine()) {
+                        if(counter < maxAttempt) {
+
+                            System.out.println(" Brugernavn eller kodeord er forkert");
+                            counter++;
+                        }else{
+                            System.out.println("Du har prøvet for mange gange din bums");
+                            found = true;
                         }
                     }
-
-               // }
-
-            //}
+                }
+            }
 
         } catch (FileNotFoundException e) {
             System.out.println("We all going to die!!!");

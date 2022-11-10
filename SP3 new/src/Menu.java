@@ -70,6 +70,9 @@ public class Menu {
             case "2":
                 User.userlogin();
                 break;
+            default:
+                System.out.println("ugyldigt valg");
+                break;
 
         }
 
