@@ -141,30 +141,30 @@ public class Menu {
                                 break;
                             }
 
-                    }
-                        break;
 
-                case "serie":
-                    System.out.println("Hvilken serie leder du efter");
-                    String seriesSearch = choice.nextLine();
+                            break;
 
-                    boolean found = false;
+                        case "serie":
+                            System.out.println("Hvilken serie leder du efter");
+                            String seriesSearch = choice.nextLine();
+                            found = false;
 
-                    for (Series s : series) {
-                        if (s.getName().toLowerCase().contains(seriesSearch.toLowerCase())) {
-                            System.out.println(s.toString());
-                            found = true;
-                        }
-                    }
-                    if (!found) {
-                        System.out.println("Denne film findes ikke i vores bibliotek");
-                        break;
+                            for (Series s : series) {
+                                if (s.getName().toLowerCase().contains(seriesSearch.toLowerCase())) {
+                                    System.out.println(s.toString());
+                                    found = true;
+                                }
+                            }
+                            if (!found) {
+                                System.out.println("Denne film findes ikke i vores bibliotek");
+                                break;
+                            }
+
+
                     }
 
 
             }
-
-
         }
     }
 }

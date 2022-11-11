@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class User extends Main {
+public class User {
 
     private String nameOfUser;
     private String lastName;
