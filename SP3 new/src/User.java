@@ -11,13 +11,6 @@ public class User extends Main {
     private ArrayList<User> users;
 // Constructor for creating user
 
-    public User(String nameOfUser, String lastName, String userName, String password, ArrayList<User> users) {
-        this.nameOfUser = nameOfUser;
-        this.lastName = lastName;
-        this.userName = userName;
-        this.password = password;
-        this.users = users;
-    }
 
     //Log-in constructor
     public User(String userName, String password) {
@@ -26,29 +19,6 @@ public class User extends Main {
     }
 
 
-    public String getNameOfUser() {
-        return nameOfUser;
-    }
-
-    public void setNameOfUser(String nameOfUser) {
-        this.nameOfUser = nameOfUser;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public ArrayList<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
 
     public String getUserName() {
         return userName;
@@ -72,7 +42,7 @@ public class User extends Main {
         Scanner scan = new Scanner(System.in);
         ArrayList<User> userList = new ArrayList<>();
         User user = new User("Turan", "Password");
-        BufferedWriter userWriter = new BufferedWriter(new FileWriter("/Users/turan/Documents/GitHub/SP3/Data/ListOfUsers.txt", true));
+        BufferedWriter userWriter = new BufferedWriter(new FileWriter("Data/ListOfUsers.txt", true));
 
 
         try {
@@ -135,12 +105,12 @@ public class User extends Main {
                         Menu.runProgram();
                         break;
                     } else if (!scan.hasNextLine()) {
-                        if(counter < maxAttempt) {
+                        if (counter < maxAttempt) {
 
                             System.out.println(" Brugernavn eller kodeord er forkert");
                             counter++;
-                        }else{
-                            System.out.println("Du har prøvet for mange gange din bums");
+                        } else {
+                            System.out.println("Du har prøvet for mange gange. Prøv igen senere");
                             found = true;
                         }
                     }

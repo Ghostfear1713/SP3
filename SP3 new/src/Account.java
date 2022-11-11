@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Account extends User {
 
 
-    public Account(String nameOfUser, String lastName, String userName, String password, ArrayList<User> users) {
-        super(nameOfUser, lastName, userName, password, users);
+    public Account(String userName, String password) {
+        super(userName, password);
     }
 
 

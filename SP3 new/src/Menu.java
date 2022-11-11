@@ -5,11 +5,8 @@ import java.util.Scanner;
 public class Menu {
 
 
-    static String fileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfMovies.txt";
-    static String seriesFileName = "/Users/turan/Documents/GitHub/SP3/Data/ListOfSeries.txt";
-
-    public Menu() throws IOException {
-    }
+    static String fileName = "Data/ListOfMovies.txt";
+    static String seriesFileName = "Data/ListOfSeries.txt";
 
 
     static BufferedReader reader;
@@ -143,8 +140,9 @@ public class Menu {
                                 System.out.println("Denne film findes ikke i vores bibliotek");
                                 break;
                             }
-                    }
 
+                    }
+                        break;
 
                 case "serie":
                     System.out.println("Hvilken serie leder du efter");
