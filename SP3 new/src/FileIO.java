@@ -7,6 +7,12 @@ import java.util.Scanner;
 public class FileIO {
 
 
+
+
+        public List <Movie> getMoviesFromFile() throws IOException{
+            return null;
+        }
+
     public List<Movie> getMoviesFromFile(BufferedReader reader) throws IOException {
 
         List<Movie> movies = new ArrayList<>();
